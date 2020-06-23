@@ -4,37 +4,20 @@
 #include <conio.h>
 #include <Windows.h>
 
-void invalidInput();
-void outputHelp();
-void outputGenerator();
-
 void outputMenu() {
 	do
 	{
 		printf("Anagram generator. Made by Ivchenko A. 515b\n");
-		printf("Press f1 to get help | Press 1 to generate anagram | Press 0 to exit\n");
+		printf("Press 1 to generate anagram | Press 0 to exit\n");
 		int key = _getch();
 		switch (key)
 		{
-		case 59: outputHelp(); break;
 		case 49: outputGenerator(); break;
 		case 48: exit(EXIT_SUCCESS); break;
 		default: break;
 		}
 		system("cls");
 	} while (true);
-}
-
-void invalidInput() {
-	system("cls");
-	printf("Inputed value is incorrect. Try again!");
-	Sleep(1000);
-}
-
-void outputHelp() {
-	system("cls");
-	// Do something
-	system("pause");
 }
 
 void outputGenerator() {
@@ -53,9 +36,9 @@ void outputGenerator() {
 	printf("Source text: %s\n", text);
 	printf("Generated anagram: ");
 	genAnagram(text);
+	printf("Press 1 to regenerate anagram | Press 2 to generate one more | Press 0 to exit to main menu\n");
 	do
 	{
-		printf("Press 1 to regenerate anagram | Press 2 to generate one more | Press 0 to exit to main menu\n");
 		int key = _getch();
 		switch (key)
 		{

@@ -3,4 +3,5 @@
 #define MAX_LENGTH 256
 int genAnagram(const char*);
 void outputMenu();
+void outputGenerator();
 #endif
